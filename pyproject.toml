@@ -9,6 +9,8 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 tina4-python = "^0.1.93"
+numpy = "^2.0.1"
+llama-cpp-python = "0.2.83"
 
 
 [build-system]
