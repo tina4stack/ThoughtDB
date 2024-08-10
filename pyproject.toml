@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "thoughtdb"
+version = "0.1.0"
+description = "ThoughtDB is a mix between relational and vector database for efficient data retrieval"
+authors = ["Andre van Zuydam <andrevanzuydam@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+tina4-python = "^0.1.93"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
