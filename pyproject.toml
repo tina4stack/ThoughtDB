@@ -11,10 +11,13 @@ python = "^3.11"
 tina4-python = "^0.1.93"
 numpy = "^2.0.1"
 llama-cpp-python = "0.2.83"
+sqlite-vec = "^0.1.1"
+cleantext = "^1.1.4"
 
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^7.1.1"
+pytest = "^8.3.2"
 
 [build-system]
 requires = ["poetry-core"]

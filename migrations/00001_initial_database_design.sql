@@ -5,20 +5,11 @@ create table organization (
     primary key (id)
 );
 
-create table vault (
-    id integer not null,
-    name varchar(255) default 'default',
-    date_created timestamp default CURRENT_TIMESTAMP,
-    organization_id integer default 0 not null references organization(id) on update cascade on delete cascade,
-    primary key (id)
-);
-
 create table collection (
     id integer not null,
     name varchar(255) default 'default',
     date_created timestamp default CURRENT_TIMESTAMP,
     organization_id integer default 0 not null references organization(id) on update cascade on delete cascade,
-    vault_id integer default 0 not null references vault(id) on update cascade on delete cascade,
     primary key (id)
 );
 
@@ -27,7 +18,6 @@ create table conversation_session (
     name varchar(255) default 'default',
     date_created timestamp default CURRENT_TIMESTAMP,
     organization_id integer default 0 not null references organization(id) on update cascade on delete cascade,
-    vault_id integer default 0 not null references vault(id) on update cascade on delete cascade,
     collection_id integer default 0 not null references collection(id) on update cascade on delete cascade,
     primary key (id)
 );
@@ -37,7 +27,6 @@ create table conversation (
     name varchar(255) default 'default',
     date_created timestamp default CURRENT_TIMESTAMP,
     organization_id integer default 0 not null references organization(id) on update cascade on delete cascade,
-    vault_id integer default 0 not null references vault(id) on update cascade on delete cascade,
     collection_id integer default 0 not null references collection(id) on update cascade on delete cascade,
     conversation_session_id integer default 0 not null references conversation_session(id) on update cascade on delete cascade,
     primary key (id)
@@ -82,6 +71,7 @@ create table conversation_embedding (
     date_created timestamp default CURRENT_TIMESTAMP,
     conversation_summary_id integer default 0 not null references conversation_summary(id) on update cascade on delete cascade,
     conversation_history_id integer default 0 not null references conversation_summary(id) on update cascade on delete cascade,
+    model_name varchar(255) default 'default',
     primary key (id)
 );
 
@@ -101,7 +91,6 @@ create table document (
     date_created timestamp default CURRENT_TIMESTAMP,
     document_type_id integer default 0 not null references document_type(id) on update cascade on delete cascade,
     organization_id integer default 0 not null references organization(id) on update cascade on delete cascade,
-    vault_id integer default 0 not null references vault(id) on update cascade on delete cascade,
     collection_id integer default 0 not null references collection(id) on update cascade on delete cascade,
     primary key (id)
 );
@@ -158,6 +147,19 @@ create table document_word (
     document_paragraph_id integer default 0 not null references document_paragraph(id) on update cascade on delete cascade,
     document_chapter_id integer default 0 not null references document_chapter(id) on update cascade on delete cascade,
     document_id integer default 0 not null references document(id) on update cascade on delete cascade,
+    primary key (id)
+);
+
+create table document_embedding (
+    id integer not null,
+    data blob,
+    date_created timestamp default CURRENT_TIMESTAMP,
+    document_id integer default 0 not null references document(id) on update cascade on delete cascade,
+    document_chapter_id integer default 0 not null references document_chapter(id) on update cascade on delete cascade,
+    document_paragraph_id integer default 0 not null references document_paragraph(id) on update cascade on delete cascade,
+    document_sentence_id integer default 0 not null references document_sentence(id) on update cascade on delete cascade,
+    document_word_id integer default 0 not null references document_word(id) on update cascade on delete cascade,
+    model_name varchar(255) default 'default',
     primary key (id)
 );
 
