@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7927b09e-82ac-4491-86c6-83d41857df73" name="Changes" comment="Test deploy sequence">
-      <change afterPath="$PROJECT_DIR$/thoughtdb/.env.sample" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="7927b09e-82ac-4491-86c6-83d41857df73" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/thoughtdb/migrations/00003_populate_zero_index_data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_organization.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_organization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/Collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Collection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/Core.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/Organization.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Organization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/VectorStore.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/VectorStore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/migrations/00002_add_relevant_indexes.sql" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/migrations/00002_add_relevant_indexes.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +93,7 @@
       <updated>1723302842802</updated>
       <workItem from="1723302844912" duration="2120000" />
       <workItem from="1723324598615" duration="52000" />
-      <workItem from="1723324663389" duration="16183000" />
+      <workItem from="1723324663389" duration="26546000" />
     </task>
     <task id="LOCAL-00001" summary="Added Organization functionality&#10;Added Indexes&#10;Added Tests for Organization">
       <option name="closed" value="true" />
@@ -106,7 +111,23 @@
       <option name="project" value="LOCAL" />
       <updated>1723370848678</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added default .env.sample">
+      <option name="closed" value="true" />
+      <created>1723371654404</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1723371654404</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Refactored file layout for module">
+      <option name="closed" value="true" />
+      <created>1723371814469</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723371814469</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,7 +137,9 @@
     <MESSAGE value="Squashed commit of the following:&#10;&#10;commit 1d1f83d063cc2070eb859467bef98ad0db17e16f&#10;Author: Andre van Zuydam &lt;andrevanzuydam@gmail.com&gt;&#10;Date:   Sat Aug 10 16:10:59 2024 +0200&#10;&#10;    Added basic classes&#10;&#10;commit e89ed82b6e3f42b29133e628145a3fb944617546&#10;Author: Andre van Zuydam &lt;andrevanzuydam@gmail.com&gt;&#10;Date:   Sat Aug 10 15:58:33 2024 +0200&#10;&#10;    Added VectorTool for embedding&#10;&#10;commit e14abac66f3ad8aff2e97320fa603c8ebf11e59f&#10;Author: Andre van Zuydam &lt;andrevanzuydam@gmail.com&gt;&#10;Date:   Sat Aug 10 12:53:45 2024 +0200&#10;&#10;    Initial commit&#10;" />
     <MESSAGE value="Added Organization functionality&#10;Added Indexes&#10;Added Tests for Organization" />
     <MESSAGE value="Test deploy sequence" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test deploy sequence" />
+    <MESSAGE value="Added default .env.sample" />
+    <MESSAGE value="Refactored file layout for module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored file layout for module" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
