@@ -7,7 +7,7 @@
 import os
 from tina4_python import *
 
-from thoughtdb.app.VectorStore import VectorStore
+from thoughtdb.VectorStore import VectorStore
 
 vector_store = VectorStore("sqlite3:"+os.getenv("DATABASE"))
 

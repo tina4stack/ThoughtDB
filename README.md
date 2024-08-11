@@ -66,7 +66,7 @@ poetry add thoughtdb
 Currently, we only support Sqlite3, all the dependencies should be installed by pip or poetry.
 
 ```python
-from thoughtdb.app import VectorStore
+from thoughtdb import VectorStore
 
 
 ```

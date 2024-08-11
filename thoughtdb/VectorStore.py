@@ -3,6 +3,7 @@
 # Copy-right 2007 - current Tina4
 # License: MIT https://opensource.org/licenses/MIT
 #
+import os
 import sqlite_vec
 from tina4_python.Database import Database
 from tina4_python import Migration
@@ -21,7 +22,14 @@ class VectorStore(Core):
         self.database = Database(path, "", "")
         Migration.migrate(self.database)
         self.database.dba.enable_load_extension(True)
-        sqlite_vec.load(self.database.dba)
+
+        try:
+            if os.name == 'nt':
+                self.database.dba.load_extension(os.path.dirname(os.path.realpath(__file__))+os.sep+"vec0.dll")
+            else:
+                sqlite_vec.load(self.database.dba)
+        except Exception as e:
+            print("Could not load vector module for SQLite")
         self.database.dba.enable_load_extension(False)
         self.model_path=model_path
         self._organizations = None

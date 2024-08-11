@@ -14,7 +14,7 @@ from thoughtdb.Collection import Collection
 from thoughtdb.Organization import Organization
 from thoughtdb.VectorStore import VectorStore
 
-os.remove("tests/test.db")
+os.remove("./tests/test.db")
 vector_store = VectorStore("sqlite3:tests/test.db")
 
 
@@ -25,8 +25,10 @@ def test_dba_clean():
 
 def test_dba_vector():
     vec_version = vector_store.database.fetch("select vec_version()")
-    print(vec_version)
-    assert vec_version[0] == {"vec_version()": "v0.1.1"}
+    if os.name == 'nt':
+        assert vec_version[0] == {"vec_version()": "v0.0.1-alpha.19"}
+    else:
+        assert vec_version[0] == {"vec_version()": "v0.1.1"}
 
 
 def test_vector_store_functionality():
