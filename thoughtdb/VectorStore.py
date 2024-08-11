@@ -32,7 +32,7 @@ class VectorStore(Core):
             print("Could not load vector module for SQLite")
         self.database.dba.enable_load_extension(False)
         self.model_path=model_path
-        self._organizations = None
+        self._organizations = {}
         super(VectorStore, self).__init__(self)
     
     def get_organizations(self, name="", raise_exception=True):
@@ -40,9 +40,10 @@ class VectorStore(Core):
 
     def get_organization(self, name, create=False):
         organization = self.get_organizations(name, False)
-        if organization is None and create:
+        if organization == {} and create:
             organization = Organization(self)
             organization.create(name)
-
+        else:
+            raise Exception(f"No organization found with name {name}")
         return organization
 

@@ -9,7 +9,7 @@ from thoughtdb.Core import Core
 
 class Organization(Core):
 
-    def __init__(self, vector_store, id=0):
+    def __init__(self, vector_store, id=0, additional_data={}):
         """
         Initialize the Organization
         :param vector_store: 
@@ -32,8 +32,11 @@ class Organization(Core):
         :param name:
         :return:
         """
-        self._load(name,id, "organization")
-        self.set_collections()
+        data = self._load(name,id, "organization")
+        if data is None:
+            raise Exception(f"Error loading organisation {name} {id} ")
+        else:
+            self.set_collections()
         return self
 
     def create(self, name):
@@ -58,8 +61,12 @@ class Organization(Core):
 
     def get_collection(self, name, create=False):
         collection = self.get_collections(name, False)
-        if collection is None and create:
+        if collection != {}:
+            return collection
+
+        if collection == {} and create:
             collection = Collection(self, additional_data={"organization_id": self._id})
             collection.create(name)
-
+        else:
+            raise Exception(f"No collection found with name {name}")
         return collection

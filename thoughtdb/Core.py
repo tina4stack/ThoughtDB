@@ -26,10 +26,11 @@ class Core:
     def get_basic_dataset(self, name, dataset, data_type, data_name="", filter="id <> 0",
                           additional_data = None,
                           raise_exception=True):
-        if dataset is None:
+        if dataset == {}:
             result = self.database.fetch(f"select * from {data_name} where {filter}")
 
             if result is not None:
+                dataset = {}
                 for record in result.records:
                     dataset[record["name"]] = data_type(self, record["id"], additional_data=additional_data)
                     dataset[record["name"]].data = record
@@ -37,19 +38,19 @@ class Core:
         if name == "":
             return dataset
         else:
-            if dataset is not None:
+            if dataset is not {}:
                 if name in dataset:
                     return dataset[name]
                 else:
                     if raise_exception:
                         raise Exception(f"No {data_name} with name {name}")
                     else:
-                        return None
+                        return  {}
             else:
                 if raise_exception:
                     raise Exception(f"No {data_name} with name {name}")
                 else:
-                    return None
+                    return  {}
 
     def _load(self, name, id, data_name):
         if id != 0:

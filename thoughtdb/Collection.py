@@ -40,9 +40,12 @@ class Collection(Core):
         :param name:
         :return:
         """
-        self._load(name, id, "collection")
-        self.set_documents()
-        self.set_conversations()
+        data = self._load(name, id, "collection")
+        if data is None:
+            raise Exception(f"Error loading organisation {name} {id} ")
+        else:
+            self.set_documents()
+            self.set_conversations()
         return self
 
     def create(self, name):
@@ -68,10 +71,14 @@ class Collection(Core):
 
     def get_document(self, name, create=False):
         document = self.get_documents(name, False)
-        if document is None and create:
+        if document != {}:
+            return document
+
+        if document == {} and create:
             document = Document(self, additional_data={"collection_id": self._id, "organization_id": self._organization_id})
             document.create(name)
-
+        else:
+            raise Exception(f"No document found with name {name}")
         return document
 
     def get_conversations(self, name="", raise_exception=True):
@@ -83,8 +90,13 @@ class Collection(Core):
 
     def get_conversation(self, name, create=False):
         conversation = self.get_conversations(name, False)
-        if conversation is None and create:
+        if conversation != {}:
+            return conversation
+
+        if conversation == {} and create:
             conversation = Conversation(self, additional_data={"collection_id": self._id, "organization_id": self._organization_id})
             conversation.create(name)
-
+        else:
+            raise Exception(f"No document found with name {name}")
         return conversation
+

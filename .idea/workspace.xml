@@ -5,18 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7927b09e-82ac-4491-86c6-83d41857df73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/thoughtdb/vec0.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_organization.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_organization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/Collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Collection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/Core.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/Document.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Document.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/Organization.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Organization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thoughtdb/VectorStore.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/VectorStore.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/migrations/00003_populate_zero_index_data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/migrations/00003_populate_zero_index_data.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +91,7 @@
       <workItem from="1723324598615" duration="52000" />
       <workItem from="1723324663389" duration="27439000" />
       <workItem from="1723387878940" duration="318000" />
-      <workItem from="1723388216155" duration="2168000" />
+      <workItem from="1723388216155" duration="7545000" />
     </task>
     <task id="LOCAL-00001" summary="Added Organization functionality&#10;Added Indexes&#10;Added Tests for Organization">
       <option name="closed" value="true" />
@@ -138,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723384642454</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Temporary hack to fix windows for sqlite-vec + migration fixes">
+      <option name="closed" value="true" />
+      <created>1723390910089</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1723390910089</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +154,8 @@
     <MESSAGE value="Added default .env.sample" />
     <MESSAGE value="Refactored file layout for module" />
     <MESSAGE value="Collections creating" />
-    <option name="LAST_COMMIT_MESSAGE" value="Collections creating" />
+    <MESSAGE value="Temporary hack to fix windows for sqlite-vec + migration fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Temporary hack to fix windows for sqlite-vec + migration fixes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

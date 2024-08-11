@@ -33,11 +33,13 @@ def test_dba_vector():
 
 def test_vector_store_functionality():
     organisations = vector_store.get_organizations()
-    assert organisations is None
+    assert organisations == {}
     with pytest.raises(Exception):
         organisations = vector_store.get_organizations("cooking")
     cooking = vector_store.get_organization("cooking", create=True)
     pots = cooking.get_collection("pots", create=True)
+    organisations = vector_store.get_organizations()
+    assert organisations["cooking"].data["name"] == "cooking"
 
 
 def test_create_organization():
@@ -68,9 +70,26 @@ def test_delete_organization():
 
 def test_general_functionality():
     organization = Organization(vector_store)
-    organization.load("testing")
+    with pytest.raises(Exception):
+        organization.load("testing")
     with pytest.raises(Exception):
         collection = organization.get_collections("collectiona")
+
+    organization.load("cooking")
     collection = organization.get_collection("pans", create=True)
-    collection.get_document("moomoo", create=True)
-    collection.get_conversation("moomoo", create=True)
+
+    with pytest.raises(Exception):
+        collection.get_document("meemee")
+
+    moomoo_document = collection.get_document("moomoo", create=True)
+    moomoo_conversation =  collection.get_conversation("moomoo", create=True)
+
+    moomoo_document.update(data="The clock within this blog and the clock on my laptop are 1 hour different from each other. If you spin around three times, you'll start to feel melancholy.", metadata={"hello": "world", "revision":"1.0"})
+
+    moo2 = collection.get_document("moomoo", create=False)
+    print(moo2.data)
+
+    moomoo_document.append(data="The beach was crowded with snow leopards. You're good at English when you know the difference between a man eating chicken and a man-eating chicken.", metadata={"chickens": "world", "revision": "2.0"})
+
+    moo3 = collection.get_document("moomoo", create=False)
+    print(moo3.data)
