@@ -69,3 +69,6 @@ def test_general_functionality():
     organization.load("testing")
     with pytest.raises(Exception):
         collection = organization.get_collections("collectiona")
+    collection = organization.get_collection("pans", create=True)
+    collection.get_document("moomoo", create=True)
+    collection.get_conversation("moomoo", create=True)

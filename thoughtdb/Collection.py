@@ -63,13 +63,13 @@ class Collection(Core):
         return self.get_basic_dataset(name, self._documents, Document, "document",
                                       filter="id <> 0 and organization_id = " + str(
                                           self._organization_id) + " and collection_id = " + str(self._id),
-                                      additional_data={"organization_id": self._organization_id},
+                                      additional_data={"collection_id": self._id, "organization_id": self._organization_id},
                                       raise_exception=raise_exception)
 
     def get_document(self, name, create=False):
         document = self.get_documents(name, False)
         if document is None and create:
-            document = Document(self)
+            document = Document(self, additional_data={"collection_id": self._id, "organization_id": self._organization_id})
             document.create(name)
 
         return document
@@ -78,12 +78,13 @@ class Collection(Core):
         return self.get_basic_dataset(name, self._conversations, Conversation, "conversation",
                                       filter="id <> 0 and organization_id = " + str(
                                           self._organization_id) + " and collection_id = " + str(self._id),
+                                      additional_data={"collection_id": self._id, "organization_id": self._organization_id},
                                       raise_exception=raise_exception)
 
     def get_conversation(self, name, create=False):
         conversation = self.get_conversations(name, False)
         if conversation is None and create:
-            conversation = Conversation(self)
+            conversation = Conversation(self, additional_data={"collection_id": self._id, "organization_id": self._organization_id})
             conversation.create(name)
 
         return conversation
