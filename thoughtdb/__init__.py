@@ -7,7 +7,7 @@ thoughtdb_library_path = os.path.dirname(os.path.realpath(__file__))
 thoughtdb_root_path = os.path.realpath(os.getcwd())
 
 # Hack for local development
-if thoughtdb_root_path.count("thoughtdb") > 0:
+if os.getenv('THOUGHTDB_DEV_MODE'):
     thoughtdb_root_path = thoughtdb_root_path.split("thoughtdb")[0][:-1]
 
 source_dir = thoughtdb_library_path + os.sep + "migrations"
@@ -29,3 +29,7 @@ if not os.path.isfile(thoughtdb_root_path + os.sep + "app.py"):
     destination_dir = thoughtdb_root_path + os.sep + "app.py"
     shutil.copy(source_dir, destination_dir)
 
+if not os.path.isfile(thoughtdb_root_path + os.sep + ".env"):
+    source_dir = thoughtdb_library_path + os.sep + ".env.sample"
+    destination_dir = thoughtdb_root_path + os.sep + ".env"
+    shutil.copy(source_dir, destination_dir)
