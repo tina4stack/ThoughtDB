@@ -1,2 +1,6 @@
 /.venv/
 /database/
+/tests/test.db
+/dist/
+/models_db/
+/migrations/

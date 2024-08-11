@@ -7,10 +7,10 @@ import os
 import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.dirname(SCRIPT_DIR + "/../src"))
+sys.path.append(os.path.dirname(SCRIPT_DIR + "/../thoughtdb"))
 
-from src.app.Organization import Organization
-from src.app.VectorStore import VectorStore
+from thoughtdb.app.Organization import Organization
+from thoughtdb.app.VectorStore import VectorStore
 os.remove("tests/test.db")
 vector_store = VectorStore("sqlite3:tests/test.db")
 

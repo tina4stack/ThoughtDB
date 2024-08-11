@@ -3,8 +3,8 @@
 # Copy-right 2007 - current Tina4
 # License: MIT https://opensource.org/licenses/MIT
 #
-from src.app.Collection import Collection
-from src.app.Core import Core
+from thoughtdb.app.Collection import Collection
+from thoughtdb.app.Core import Core
 
 
 class Organization(Core):

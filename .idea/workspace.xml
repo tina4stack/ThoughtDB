@@ -5,34 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7927b09e-82ac-4491-86c6-83d41857df73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/magento2plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/00002_add_relevant_indexes.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models_db/nomic-embed-text-v1.5.Q4_K_M.gguf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Core.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/VectorStore.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_organization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ThoughtDB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ThoughtDB.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thoughtdb/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thoughtdb/app.sample" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/00001_initial_database_design.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/00001_initial_database_design.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/00001_initial_database_design.sql" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/migrations/00001_initial_database_design.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/00002_add_relevant_indexes.sql" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/migrations/00002_add_relevant_indexes.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/app/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models_db/nomic-embed-text-v1.5.Q4_K_M.gguf" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/models_db/nomic-embed-text-v1.5.Q4_K_M.gguf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models_db/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/database/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Collection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Conversation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Conversation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Document.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Document.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Organization.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Organization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Vault.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/app/Collection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Conversation.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/app/Conversation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Core.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/app/Core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Document.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/app/Document.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Organization.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/app/Organization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/VectorStore.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/app/VectorStore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/VectorTool.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/app/VectorTool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/migrations/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/orm/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/models_db/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/swagger/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/swagger/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/swagger/oauth2-redirect.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/swagger/oauth2-redirect.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/routes/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_organization.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_organization.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +67,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/andrevanzuydam/IdeaProjects/simone2/ThoughtDB",
+    "last_opened_file_path": "/Users/andrevanzuydam/IdeaProjects/simone2/ThoughtDB/thoughtdb",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,8 +82,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/thoughtdb" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/models_db" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/thoughtdb" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -103,12 +107,26 @@
       <updated>1723302842802</updated>
       <workItem from="1723302844912" duration="2120000" />
       <workItem from="1723324598615" duration="52000" />
-      <workItem from="1723324663389" duration="10879000" />
+      <workItem from="1723324663389" duration="15386000" />
     </task>
+    <task id="LOCAL-00001" summary="Added Organization functionality&#10;Added Indexes&#10;Added Tests for Organization">
+      <option name="closed" value="true" />
+      <created>1723365994248</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723365994248</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Squashed commit of the following:&#10;&#10;commit 1d1f83d063cc2070eb859467bef98ad0db17e16f&#10;Author: Andre van Zuydam &lt;andrevanzuydam@gmail.com&gt;&#10;Date:   Sat Aug 10 16:10:59 2024 +0200&#10;&#10;    Added basic classes&#10;&#10;commit e89ed82b6e3f42b29133e628145a3fb944617546&#10;Author: Andre van Zuydam &lt;andrevanzuydam@gmail.com&gt;&#10;Date:   Sat Aug 10 15:58:33 2024 +0200&#10;&#10;    Added VectorTool for embedding&#10;&#10;commit e14abac66f3ad8aff2e97320fa603c8ebf11e59f&#10;Author: Andre van Zuydam &lt;andrevanzuydam@gmail.com&gt;&#10;Date:   Sat Aug 10 12:53:45 2024 +0200&#10;&#10;    Initial commit&#10;" />
+    <MESSAGE value="Added Organization functionality&#10;Added Indexes&#10;Added Tests for Organization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Organization functionality&#10;Added Indexes&#10;Added Tests for Organization" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
