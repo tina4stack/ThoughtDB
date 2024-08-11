@@ -3,11 +3,11 @@
 # Copy-right 2007 - current Tina4
 # License: MIT https://opensource.org/licenses/MIT
 #
-from thoughtdb.app.Core import Core
+from thoughtdb.Core import Core
 
 
-class Document(Core):
+class Conversation(Core):
 
     def __init__(self, vector_store):
         self.id = 0
-        super(Document, self).__init__(vector_store)
+        super(Conversation, self).__init__(vector_store)

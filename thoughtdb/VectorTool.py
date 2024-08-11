@@ -12,6 +12,7 @@ global vector_llm
 
 vector_llm = None
 
+
 class VectorTool:
 
     @staticmethod
@@ -62,7 +63,7 @@ class VectorTool:
                 vector = VectorTool.get_vector(vector)
 
             vector_text = numpy.array(vector)
-            cosine = (numpy.dot(input_text,vector_text)/(norm(input_text) * norm(vector_text)))
+            cosine = (numpy.dot(input_text, vector_text) / (norm(input_text) * norm(vector_text)))
 
             similarity.append({"index": counter, "match": round(cosine * 100)})
             counter += 1

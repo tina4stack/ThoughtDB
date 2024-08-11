@@ -3,8 +3,8 @@
 # Copy-right 2007 - current Tina4
 # License: MIT https://opensource.org/licenses/MIT
 #
-from thoughtdb.app.Core import Core
-from thoughtdb.app.Document import Document
+from thoughtdb.Core import Core
+from thoughtdb.Document import Document
 
 
 class Collection(Core):
