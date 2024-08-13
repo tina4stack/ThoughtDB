@@ -14,12 +14,13 @@ from thoughtdb.Collection import Collection
 from thoughtdb.Organization import Organization
 from thoughtdb.VectorStore import VectorStore
 
-os.remove("./tests/test.db")
+if os.path.isfile('./tests/test.db'):
+    os.remove("./tests/test.db")
 vector_store = VectorStore("sqlite3:tests/test.db")
 
 
 def test_dba_clean():
-    vector_store.database.execute("delete from organization where id <> 0")
+    vector_store.database.execute("delete from system.organization where id <> 0")
     vector_store.database.commit()
 
 

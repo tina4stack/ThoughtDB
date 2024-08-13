@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7927b09e-82ac-4491-86c6-83d41857df73" name="Changes" comment="">
+    <list default="true" id="7927b09e-82ac-4491-86c6-83d41857df73" name="Changes" comment="Database refactor">
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_organization.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_organization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/Collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Collection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/Core.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Core.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/Document.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Document.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/Organization.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Organization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/VectorStore.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/VectorStore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/migrations/00001_initial_database_design.sql" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/migrations/00001_initial_database_design.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/migrations/00003_populate_zero_index_data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/migrations/00003_populate_zero_index_data.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +30,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="D:\php\php8.2.5\php.exe" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -45,6 +48,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/projects/python/simone2/ThoughtDB/thoughtdb",
     "node.js.detected.package.eslint": "true",
@@ -91,7 +95,9 @@
       <workItem from="1723324598615" duration="52000" />
       <workItem from="1723324663389" duration="27439000" />
       <workItem from="1723387878940" duration="318000" />
-      <workItem from="1723388216155" duration="7545000" />
+      <workItem from="1723388216155" duration="19061000" />
+      <workItem from="1723492205463" duration="5000" />
+      <workItem from="1723548262696" duration="1149000" />
     </task>
     <task id="LOCAL-00001" summary="Added Organization functionality&#10;Added Indexes&#10;Added Tests for Organization">
       <option name="closed" value="true" />
@@ -141,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723390910089</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="All tests passing up to document append">
+      <option name="closed" value="true" />
+      <created>1723396348882</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1723396348882</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +169,8 @@
     <MESSAGE value="Refactored file layout for module" />
     <MESSAGE value="Collections creating" />
     <MESSAGE value="Temporary hack to fix windows for sqlite-vec + migration fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Temporary hack to fix windows for sqlite-vec + migration fixes" />
+    <MESSAGE value="All tests passing up to document append" />
+    <option name="LAST_COMMIT_MESSAGE" value="All tests passing up to document append" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

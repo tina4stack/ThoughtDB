@@ -85,3 +85,5 @@ python3 -m twine upload --repository pipy dist/*
 ```bash
  pytest tests --verbose
 ```
+
+# Todo
