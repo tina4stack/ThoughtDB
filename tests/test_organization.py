@@ -31,6 +31,9 @@ def test_dba_vector():
     else:
         assert vec_version[0] == {"vec_version()": "v0.1.1"}
 
+def test_vector_store_embedder():
+    embeddings = vector_store.embedder.embed("Text")
+    assert len(embeddings) == 768
 
 def test_vector_store_functionality():
     organisations = vector_store.get_organizations()
@@ -65,7 +68,7 @@ def test_delete_organization():
     organization = Organization(vector_store)
     assert organization is not None
     del1 = organization.delete("oneupdate")
-    assert del1.data == None
+    assert del1.data is None
     organization.delete(id=3)
 
 
@@ -77,6 +80,7 @@ def test_general_functionality():
         collection = organization.get_collections("collectiona")
 
     organization.load("cooking")
+    assert organization.data["name"] == "cooking"
     collection = organization.get_collection("pans", create=True)
 
     with pytest.raises(Exception):

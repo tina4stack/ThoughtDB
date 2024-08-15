@@ -10,11 +10,12 @@ from tina4_python import Migration
 
 from thoughtdb.Core import Core
 from thoughtdb.Organization import Organization
+from thought.model_loader import load_model
 
 
 class VectorStore(Core):
 
-    def __init__(self, path, model_path="./nomic-embed-text-v1.5.Q4_K_M.gguf"):
+    def __init__(self, path, model_path="./models_db/nomic-embed-text-v1.5.Q4_K_M.gguf", embedder=None):
         """
         Initializes the vector store
         :param path:
@@ -30,6 +31,13 @@ class VectorStore(Core):
                 sqlite_vec.load(self.database.dba)
         except Exception as e:
             print("Could not load vector module for SQLite")
+
+        # @todo load embeddings into memory and spin off an encoding thread to embed data
+        if embedder is None:
+            embedder = load_model (model_path, verbose=True, embedding=True)
+
+
+        self.embedder = embedder
         self.database.dba.enable_load_extension(False)
         self.model_path=model_path
         self._organizations = {}
@@ -46,4 +54,7 @@ class VectorStore(Core):
         else:
             raise Exception(f"No organization found with name {name}")
         return organization
+
+    def run_embedding_thread(self, on_complete=None, keep_running=False):
+        pass
 

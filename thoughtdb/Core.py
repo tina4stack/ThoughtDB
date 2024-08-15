@@ -75,6 +75,7 @@ class Core:
             self._id = id
         self._load(name, id, data_name)
         self.database.update(data_name, {"name": self.system_name(name), "id": id})
+        # @todo remove embedding so it can be recreated
         self.database.commit()
         return self
 
@@ -84,6 +85,8 @@ class Core:
             self.database.delete(data_name, {"id": self._id})
         else:
             self.database.delete(data_name, {"name": name})
+
+        # @todo remove embedding so it can be recreated
         self.database.commit()
         self._id = 0
         self.data = None

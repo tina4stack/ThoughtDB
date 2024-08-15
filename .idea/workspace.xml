@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7927b09e-82ac-4491-86c6-83d41857df73" name="Changes" comment="Database refactor">
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_memory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thoughtdb/Memory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_organization.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_organization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/Core.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/VectorStore.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/VectorStore.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thoughtdb/migrations/00001_initial_database_design.sql" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/migrations/00001_initial_database_design.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/migrations/00003_populate_zero_index_data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/migrations/00003_populate_zero_index_data.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +55,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/projects/python/simone2/ThoughtDB/thoughtdb",
+    "last_opened_file_path": "D:/projects/python/ThoughtDB",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,7 +84,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.300" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.387" />
       </set>
     </attachedChunks>
   </component>
@@ -97,7 +102,11 @@
       <workItem from="1723387878940" duration="318000" />
       <workItem from="1723388216155" duration="19061000" />
       <workItem from="1723492205463" duration="5000" />
-      <workItem from="1723548262696" duration="1149000" />
+      <workItem from="1723548262696" duration="3780000" />
+      <workItem from="1723618114285" duration="5235000" />
+      <workItem from="1723627560986" duration="556000" />
+      <workItem from="1723632828952" duration="5630000" />
+      <workItem from="1723725480551" duration="5571000" />
     </task>
     <task id="LOCAL-00001" summary="Added Organization functionality&#10;Added Indexes&#10;Added Tests for Organization">
       <option name="closed" value="true" />
@@ -155,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723396348882</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added image table for storing image embeddings&#10;Merged embeddings into one table">
+      <option name="closed" value="true" />
+      <created>1723549459185</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1723549459185</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +187,9 @@
     <MESSAGE value="Collections creating" />
     <MESSAGE value="Temporary hack to fix windows for sqlite-vec + migration fixes" />
     <MESSAGE value="All tests passing up to document append" />
-    <option name="LAST_COMMIT_MESSAGE" value="All tests passing up to document append" />
+    <MESSAGE value="Database refactor" />
+    <MESSAGE value="Added image table for storing image embeddings&#10;Merged embeddings into one table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added image table for storing image embeddings&#10;Merged embeddings into one table" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
