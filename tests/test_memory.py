@@ -32,7 +32,8 @@ def test_memory():
 
 def test_vector_search():
     start = pc()
-    search = memory.search("I want to feed", 20)
+    # sql query to find ids from the collection
+    search = memory.search("I want to feed", 20, [3,4,6])
     for result in search:
         print(list_of_items[result["id"]-1], str(result["match"])+"%" )
     end = pc()
