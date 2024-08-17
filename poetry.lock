@@ -952,13 +952,13 @@ llama-cpp-python = "0.2.88"
 
 [[package]]
 name = "tina4-python"
-version = "0.1.95"
+version = "0.1.97"
 description = "Tina4Python - This is not another framework for Python"
 optional = false
 python-versions = "<4.0,>=3.10"
 files = [
-    {file = "tina4_python-0.1.95-py3-none-any.whl", hash = "sha256:d9ea44c1f5568998f8bd624e306a6d007d409b9dc7797032f0256ef46cc5a12a"},
-    {file = "tina4_python-0.1.95.tar.gz", hash = "sha256:95e2c73d2cdbab5b1bab2d27ffc1b486a71e95379ae5ad44fbe9a7c92d262192"},
+    {file = "tina4_python-0.1.97-py3-none-any.whl", hash = "sha256:86a45fb93efde9219ed245bcd049a1c5adf46107cea36d572e9921466bc97a0e"},
+    {file = "tina4_python-0.1.97.tar.gz", hash = "sha256:907c1f88d2722646e14ac35cee22e7f12de041c11c7a728a0d473e46e9ddda76"},
 ]
 
 [package.dependencies]
@@ -1080,4 +1080,4 @@ watchmedo = ["PyYAML (>=3.10)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "bc8491c09e9ecb5a98e4fdb843d5bcd04828502c7ad3c4ebcb13296fb069324d"
+content-hash = "cbd3a3a3cd0d5829686d01478647245bec35880bed22b7a7183a5dd155dad001"

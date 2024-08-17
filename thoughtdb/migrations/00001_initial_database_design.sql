@@ -1,5 +1,3 @@
-create
-schema system;
 create table organization
 (
     id           integer not null,
@@ -173,17 +171,11 @@ create table embedding
     id                      integer                not null,
     data                    blob,
     date_created            timestamp    default CURRENT_TIMESTAMP,
-    document_id             integer      default 0 not null references document (id) on update cascade on delete cascade,
-    document_chapter_id     integer      default 0 not null references document_chapter (id) on update cascade on delete cascade,
-    document_paragraph_id   integer      default 0 not null references document_paragraph (id) on update cascade on delete cascade,
-    document_sentence_id    integer      default 0 not null references document_sentence (id) on update cascade on delete cascade,
-    document_word_id        integer      default 0 not null references document_word (id) on update cascade on delete cascade,
-    conversation_summary_id integer      default 0 not null references conversation_summary (id) on update cascade on delete cascade,
-    conversation_history_id integer      default 0 not null references conversation_summary (id) on update cascade on delete cascade,
-    image_id                integer      default 0 not null references image (id) on update cascade on delete cascade,
-    organization_id         integer      default 0 not null references organization (id) on update cascade on delete cascade,
-    collection_id           integer      default 0 not null references collection (id) on update cascade on delete cascade,
     model_name              varchar(255) default 'default',
+    column_name             varchar(255) default '',
+    table_name              varchar(255) default '',
+    key_name                varchar(255) default 'id',
+    key_value               varchar(255) default '',
     primary key (id)
 );
 
