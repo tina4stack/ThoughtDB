@@ -30,7 +30,6 @@ class Memory:
         question_vector = self.vector_store.embedder.embed(text)
         similarity = []
         counter = 0
-        print('EMBEDDINGS', len(self.embeddings))
         for id in self.embeddings:
 
             if len(filter) > 0:

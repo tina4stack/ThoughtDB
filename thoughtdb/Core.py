@@ -70,11 +70,14 @@ class Core:
         self.database.commit()
         return data
 
-    def _update(self, name, data_name, id=0):
+    def _update(self, name, data_name, id=0, additional_data=None):
+        update_data = {"name": self.system_name(name), "id": id}
         if id != 0:
             self._id = id
         self._load(name, id, data_name)
-        self.database.update(data_name, {"name": self.system_name(name), "id": id})
+        if additional_data is not None:
+            update_data.update(additional_data)
+        self.database.update(data_name, update_data)
         # @todo remove embedding so it can be recreated
         self.database.commit()
         return self

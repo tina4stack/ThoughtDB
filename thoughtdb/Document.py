@@ -43,6 +43,7 @@ class Document(Core):
 
         if self.data is not None:
             self.data["data"] = data
+
             # set metadata
             self.database.update("document", self.data)
             self.database.commit()
@@ -63,3 +64,21 @@ class Document(Core):
             self.database.commit()
         else:
             raise Exception(f"Document not found {name} {id}")
+
+    def parse_document_text(self, text):
+        lines = text.split("\n")
+        paragraphs = []
+        paragraph = ""
+        for line in lines:
+            paragraph += line
+            if line.strip() == "":
+                paragraphs.append(segment)
+                segment = ""
+        sentences = []
+        for paragraph in paragraphs:
+            sentence_list = paragraph.replace('\n', " ").strip().split(".")
+            for sentence in sentence_list:
+                if sentence != "":
+                    sentences.append(sentence)
+
+        return paragraphs, sentences

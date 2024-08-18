@@ -54,7 +54,7 @@ class Collection(Core):
         return self
 
     def update(self, name, id=0):
-        self._update(name, "collection", id)
+        self._update(name, "collection", id, {"organization_id": self._organization_id})
         self.data["name"] = self.system_name(name)
         return self
 

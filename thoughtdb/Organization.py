@@ -17,6 +17,7 @@ class Organization(Core):
         self._id = id
         self.data = None
         self._collections = {}
+        self.additional_data = additional_data
         super(Organization, self).__init__(vector_store)
 
     def set_collections(self):
@@ -40,12 +41,12 @@ class Organization(Core):
         return self
 
     def create(self, name):
-        data = self._create(name, "organization")
+        data = self._create(name, "organization", self.additional_data)
         self.load(id=data.records[0]["id"])
         return self
 
     def update(self, name, id=0):
-        self._update(name, "organization", id)
+        self._update(name, "organization", id, self.additional_data)
         self.data["name"] = self.system_name(name)
         return self
 

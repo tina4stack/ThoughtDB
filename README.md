@@ -44,6 +44,8 @@ The following is the layout for the ThoughtDB data structure. As we are in Alpha
         - Paragraphs
         - Sentences
         - Words
+    - Images
+    - Audio
 
 # Overview
 

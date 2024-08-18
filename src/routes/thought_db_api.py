@@ -35,4 +35,19 @@ async def api_get_organisations(request, response):
 
     organisations = vector_store.get_organizations("")
 
+    result = []
+    for key in organisations:
+        result.append({"id": organisations[key].data["id"], "name": organisations[key].data["name"]})
+
+    return response(result)
+
+@get("/api/organisations/{id}")
+@description("Get a single organisation")
+@tags("Organisation")
+@secure()
+async def api_get_organisations(request, response):
+    global vector_store
+
+    organisations = vector_store.get_organization("")
+
     return response(organisations)

@@ -131,7 +131,7 @@ class VectorStore(Core):
         :param search:
         :return:
         """
-        results = self.memory.search(search,count)
+        results = self.memory.search(search, count)
         ids = []
         for result in results:
             ids.append(result["id"])

@@ -29,10 +29,10 @@ if not os.path.isfile(thought_db_root_path + os.sep + "app.py"):
     destination_dir = thought_db_root_path + os.sep + "app.py"
     shutil.copy(source_dir, destination_dir)
 
-
-source_dir = thought_db_library_path + os.sep + "routes" + os.sep + "api.py"
-destination_dir = thought_db_root_path + os.sep + "src" + os.sep + "routes" + os.sep + "thought_db_api.py"
-shutil.copy(source_dir, destination_dir)
+# @todo put back
+#source_dir = thought_db_library_path + os.sep + "routes" + os.sep + "api.py"
+#destination_dir = thought_db_root_path + os.sep + "src" + os.sep + "routes" + os.sep + "thought_db_api.py"
+#shutil.copy(source_dir, destination_dir)
 
 if not os.path.isfile(thought_db_root_path + os.sep + ".env"):
     source_dir = thought_db_library_path + os.sep + ".env.sample"
