@@ -19,7 +19,7 @@ class Document(Core):
                 self._organization_id = additional_data["organization_id"]
             if "collection_id" in additional_data:
                 self._collection_id = additional_data["collection_id"]
-        super(Document, self).__init__(vector_store)
+        super(Document, self).__init__(vector_store, id=id)
 
     def load(self, name="", id=0):
         """

@@ -72,7 +72,7 @@ async def api_get_organizations(request, response):
 
         result = []
         for key in organisations:
-            result.append({"id": organisations[key].data["id"], "name": organisations[key].data["name"]})
+            result.append({"id": organisations[key].data["id"], "name": organisations[key].data["name"] })
     except Exception as e:
         result = {"error": str(e)}
 
@@ -108,7 +108,7 @@ async def api_get_organizations_collections(request, response):
 
         result = []
         for key in collections:
-            result.append({"id": collections[key].data["id"], "name": collections[key].data["name"]})
+            result.append({"id": collections[key].data["id"], "name": collections[key].data["name"], "organizationId": collections[key].data["organization_id"]})
 
     except Exception as e:
         result = {"error": str(e)}

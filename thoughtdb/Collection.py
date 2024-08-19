@@ -18,7 +18,7 @@ class Collection(Core):
         if additional_data is not None:
             if "organization_id" in additional_data:
                 self._organization_id = additional_data["organization_id"]
-        super(Collection, self).__init__(vector_store)
+        super(Collection, self).__init__(vector_store, id=id)
 
     def set_documents(self):
         """
