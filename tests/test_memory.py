@@ -7,14 +7,13 @@ from time import perf_counter as pc
 import os
 import sys
 
-from thoughtdb.Memory import Memory
-
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR + "/../thoughtdb"))
 
 from thoughtdb.Collection import Collection
 from thoughtdb.Organization import Organization
 from thoughtdb.VectorStore import VectorStore
+from thoughtdb.Memory import Memory
 
 if os.path.isfile('./tests/test2.db'):
     os.remove("./tests/test2.db")

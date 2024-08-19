@@ -8,10 +8,10 @@ from cleantext import clean
 
 class Core:
 
-    def __init__(self, vector_store):
+    def __init__(self, vector_store, id=0):
         self.database = vector_store.database
         self.vector_store = vector_store
-        self._id = 0
+        self._id = id
         self.data = {}
 
     def system_name(self, text, punctuation=True):
@@ -25,7 +25,8 @@ class Core:
             return ""
         return clean(text, punct=punctuation, stemming=False, extra_spaces=False).replace(" ", "_")
 
-    def get_basic_dataset(self, name, dataset, data_type, data_name="", filter="id <> 0",
+    def get_basic_dataset(self, name, dataset, data_type, data_name="",
+                          filter="id <> 0",
                           additional_data=None,
                           raise_exception=True,
                           id=0):
@@ -41,7 +42,7 @@ class Core:
             if result is not None:
                 dataset = {}
                 for record in result.records:
-                    dataset[record["name"]] = data_type(self, record["id"], additional_data=additional_data)
+                    dataset[record["name"]] = data_type(self, id=record["id"], additional_data=additional_data)
                     dataset[record["name"]].data = record
 
         if name == "":
@@ -52,12 +53,12 @@ class Core:
                     return dataset[name]
                 else:
                     if raise_exception:
-                        raise Exception(f"No {data_name} with name {name}")
+                        raise Exception(f"No {data_name} with name {name} {id}")
                     else:
                         return {}
             else:
                 if raise_exception:
-                    raise Exception(f"No {data_name} with name {name}")
+                    raise Exception(f"No {data_name} with name {name} {id}")
                 else:
                     return {}
 
@@ -69,6 +70,8 @@ class Core:
             self.data = self.database.fetch_one(f"select * from {data_name} where name = ?", [self.system_name(name)])
             if self.data is not None:
                 self._id = self.data["id"]
+
+        print (self.data, self._id)
         return self.data
 
     def _create(self, name, data_name, additional_data=None):

@@ -68,10 +68,11 @@ class VectorStore(Core):
         :param raise_exception:
         :return:
         """
-        return self.get_basic_dataset(self.system_name(name), self._organizations, Organization, "organization", id=id, filter="id <> 0",
+        return self.get_basic_dataset(self.system_name(name), self._organizations, Organization,
+                                      "organization", id=id, filter="id <> 0",
                                       raise_exception=raise_exception)
 
-    def get_organization(self, name, id=0, create=False):
+    def get_organization(self, name="", id=0, create=False):
         """
         Gets a single organization from the vector store
         :param id:
@@ -86,7 +87,7 @@ class VectorStore(Core):
             organization.create(name)
         else:
             if organization == {}:
-                raise Exception(f"No organization found with name {name}")
+                raise Exception(f"No organization found: {name} {id}")
 
         return organization
 

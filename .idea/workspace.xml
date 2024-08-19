@@ -6,12 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="7927b09e-82ac-4491-86c6-83d41857df73" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/thought_db_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/thought_db_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_memory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thoughtdb/Collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Collection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thoughtdb/Core.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Core.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thoughtdb/Organization.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Organization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thoughtdb/VectorStore.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/VectorStore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/app.sample" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/app.sample" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thoughtdb/migrations/00001_initial_database_design.sql" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/migrations/00001_initial_database_design.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/routes/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/routes/api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +115,7 @@
       <workItem from="1723725480551" duration="11100000" />
       <workItem from="1723906393958" duration="7596000" />
       <workItem from="1723918497949" duration="3931000" />
-      <workItem from="1724092891199" duration="3943000" />
+      <workItem from="1724092891199" duration="11699000" />
     </task>
     <task id="LOCAL-00001" summary="Added Organization functionality&#10;Added Indexes&#10;Added Tests for Organization">
       <option name="closed" value="true" />
@@ -198,13 +205,22 @@
       <option name="project" value="LOCAL" />
       <updated>1723965077125</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Organization api working">
+      <option name="closed" value="true" />
+      <created>1724096875314</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1724096875314</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Squashed commit of the following:&#10;&#10;commit 1d1f83d063cc2070eb859467bef98ad0db17e16f&#10;Author: Andre van Zuydam &lt;andrevanzuydam@gmail.com&gt;&#10;Date:   Sat Aug 10 16:10:59 2024 +0200&#10;&#10;    Added basic classes&#10;&#10;commit e89ed82b6e3f42b29133e628145a3fb944617546&#10;Author: Andre van Zuydam &lt;andrevanzuydam@gmail.com&gt;&#10;Date:   Sat Aug 10 15:58:33 2024 +0200&#10;&#10;    Added VectorTool for embedding&#10;&#10;commit e14abac66f3ad8aff2e97320fa603c8ebf11e59f&#10;Author: Andre van Zuydam &lt;andrevanzuydam@gmail.com&gt;&#10;Date:   Sat Aug 10 12:53:45 2024 +0200&#10;&#10;    Initial commit&#10;" />
     <MESSAGE value="Added Organization functionality&#10;Added Indexes&#10;Added Tests for Organization" />
     <MESSAGE value="Test deploy sequence" />
@@ -218,7 +234,8 @@
     <MESSAGE value="Working memory search" />
     <MESSAGE value="Working search" />
     <MESSAGE value="Beginning of REST api implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Beginning of REST api implementation" />
+    <MESSAGE value="Organization api working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Organization api working" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

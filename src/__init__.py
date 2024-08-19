@@ -1,5 +1,8 @@
 # Start your project here
 import os
+from thoughtdb.VectorStore import VectorStore
+
+vector_store = VectorStore("sqlite3:" + os.getenv("DATABASE"))
+
 import src.routes.thought_db_api
-print("Running")
-os.environ["TINA4_DEFAULT_WEBSERVER"] = "False"
+

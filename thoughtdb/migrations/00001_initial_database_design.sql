@@ -9,10 +9,11 @@ create table organization
 create table collection
 (
     id              integer                not null,
-    name            varchar(255) default 'default' not null unique,
+    name            varchar(255) default 'default' not null,
     date_created    timestamp    default CURRENT_TIMESTAMP,
     organization_id integer      default 0 not null references organization (id) on update cascade on delete cascade,
-    primary key (id)
+    primary key (id),
+    unique (name, organization_id)
 );
 
 create table conversation_session

@@ -20,7 +20,7 @@ class Organization(Core):
         self.data = None
         self._collections = {}
         self.additional_data = additional_data
-        super(Organization, self).__init__(vector_store)
+        super(Organization, self).__init__(vector_store, id=id)
 
     def set_collections(self):
         """
@@ -66,7 +66,7 @@ class Organization(Core):
         :param raise_exception:
         :return:
         """
-        return self.get_basic_dataset(name, self._collections, Collection, "collection",
+        return self.get_basic_dataset(self.system_name(name), self._collections, Collection, "collection",
                                       filter="id <> 0 and organization_id = " + str(self._id),
                                       additional_data={"organization_id": self._id},
                                       id=id,
@@ -89,6 +89,6 @@ class Organization(Core):
             collection.create(name)
         else:
             if collection == {}:
-                raise Exception(f"No collection found with name {name}")
+                raise Exception(f"No collection found: {name} {id}")
 
         return collection
