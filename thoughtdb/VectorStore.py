@@ -60,30 +60,38 @@ class VectorStore(Core):
         self._organizations = {}
         super(VectorStore, self).__init__(self)
 
-    def get_organizations(self, name="", raise_exception=True):
+    def get_organizations(self, name="", id=0, raise_exception=True):
         """
         Get organizations from the vector store
+        :param id:
         :param name:
         :param raise_exception:
         :return:
         """
-        return self.get_basic_dataset(name, self._organizations, Organization, "organization", filter="id <> 0",
+        return self.get_basic_dataset(self.system_name(name), self._organizations, Organization, "organization", id=id, filter="id <> 0",
                                       raise_exception=raise_exception)
 
-    def get_organization(self, name, create=False):
+    def get_organization(self, name, id=0, create=False):
         """
         Gets a single organization from the vector store
+        :param id:
         :param name:
         :param create:
         :return:
         """
-        organization = self.get_organizations(name, False)
+        organization = self.get_organizations(name, id=id, raise_exception=False)
+
         if organization == {} and create:
             organization = Organization(self)
             organization.create(name)
         else:
-            raise Exception(f"No organization found with name {name}")
+            if organization == {}:
+                raise Exception(f"No organization found with name {name}")
+
         return organization
+
+    def del_organization(self, name="", id=0):
+        return self._delete(name=name, id=id, data_name="organization")
 
     def create_embedding(self, table_name, column_name, key_name, key_value, data):
         """
@@ -152,3 +160,5 @@ class VectorStore(Core):
 
     def run_embedding_thread(self, on_complete=None, keep_running=False):
         pass
+
+

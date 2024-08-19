@@ -5,18 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7927b09e-82ac-4491-86c6-83d41857df73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/.env.sample" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/.env.sample" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/thought_db_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/thought_db_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thoughtdb/Collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Collection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thoughtdb/Core.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Core.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/Document.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Document.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/Memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Memory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thoughtdb/Organization.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Organization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thoughtdb/VectorStore.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/VectorStore.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/routes/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/routes/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/migrations/00001_initial_database_design.sql" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/migrations/00001_initial_database_design.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +30,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="aea171c5-1132-480f-a331-c7a0f68f313e" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -109,7 +107,8 @@
       <workItem from="1723632828952" duration="5630000" />
       <workItem from="1723725480551" duration="11100000" />
       <workItem from="1723906393958" duration="7596000" />
-      <workItem from="1723918497949" duration="3361000" />
+      <workItem from="1723918497949" duration="3931000" />
+      <workItem from="1724092891199" duration="3943000" />
     </task>
     <task id="LOCAL-00001" summary="Added Organization functionality&#10;Added Indexes&#10;Added Tests for Organization">
       <option name="closed" value="true" />
@@ -191,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723916864167</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Beginning of REST api implementation">
+      <option name="closed" value="true" />
+      <created>1723965077125</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1723965077125</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +217,8 @@
     <MESSAGE value="Database refactor" />
     <MESSAGE value="Working memory search" />
     <MESSAGE value="Working search" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working search" />
+    <MESSAGE value="Beginning of REST api implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Beginning of REST api implementation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

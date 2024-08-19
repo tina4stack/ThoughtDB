@@ -1,7 +1,7 @@
 create table organization
 (
     id           integer not null,
-    name         varchar(255) default 'default',
+    name         varchar(255) default 'default' not null unique,
     date_created timestamp    default CURRENT_TIMESTAMP,
     primary key (id)
 );
@@ -9,7 +9,7 @@ create table organization
 create table collection
 (
     id              integer                not null,
-    name            varchar(255) default 'default',
+    name            varchar(255) default 'default' not null unique,
     date_created    timestamp    default CURRENT_TIMESTAMP,
     organization_id integer      default 0 not null references organization (id) on update cascade on delete cascade,
     primary key (id)

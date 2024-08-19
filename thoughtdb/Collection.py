@@ -78,7 +78,9 @@ class Collection(Core):
             document = Document(self, additional_data={"collection_id": self._id, "organization_id": self._organization_id})
             document.create(name)
         else:
-            raise Exception(f"No document found with name {name}")
+            if document == {}:
+                raise Exception(f"No document found with name {name}")
+
         return document
 
     def get_conversations(self, name="", raise_exception=True):
@@ -97,6 +99,7 @@ class Collection(Core):
             conversation = Conversation(self, additional_data={"collection_id": self._id, "organization_id": self._organization_id})
             conversation.create(name)
         else:
-            raise Exception(f"No document found with name {name}")
+            if conversation == {}:
+                raise Exception(f"No document found with name {name}")
         return conversation
 

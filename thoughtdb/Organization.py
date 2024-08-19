@@ -9,11 +9,13 @@ from thoughtdb.Core import Core
 
 class Organization(Core):
 
-    def __init__(self, vector_store, id=0, additional_data={}):
+    def __init__(self, vector_store, id=0, additional_data=None):
         """
         Initialize the Organization
         :param vector_store: 
         """
+        if additional_data is None:
+            additional_data = {}
         self._id = id
         self.data = None
         self._collections = {}
@@ -33,7 +35,7 @@ class Organization(Core):
         :param name:
         :return:
         """
-        data = self._load(name,id, "organization")
+        data = self._load(name, id, "organization")
         if data is None:
             raise Exception(f"Error loading organisation {name} {id} ")
         else:
@@ -42,7 +44,9 @@ class Organization(Core):
 
     def create(self, name):
         data = self._create(name, "organization", self.additional_data)
-        self.load(id=data.records[0]["id"])
+
+        if data:
+            self.load(id=data.records[0]["id"])
         return self
 
     def update(self, name, id=0):
@@ -54,14 +58,29 @@ class Organization(Core):
         self._delete(name, id, "organization")
         return self
 
-    def get_collections(self, name="", raise_exception=True):
+    def get_collections(self, name="", id=0, raise_exception=True):
+        """
+        Gets a collection by name or id
+        :param name:
+        :param id:
+        :param raise_exception:
+        :return:
+        """
         return self.get_basic_dataset(name, self._collections, Collection, "collection",
-                                      filter="id <> 0 and organization_id = "+str(self._id),
+                                      filter="id <> 0 and organization_id = " + str(self._id),
                                       additional_data={"organization_id": self._id},
+                                      id=id,
                                       raise_exception=raise_exception)
 
-    def get_collection(self, name, create=False):
-        collection = self.get_collections(name, False)
+    def get_collection(self, name, id=0, create=False):
+        """
+        Gets a collection by name or id
+        :param name:
+        :param id:
+        :param create:
+        :return:
+        """
+        collection = self.get_collections(name, id=id, raise_exception=False)
         if collection != {}:
             return collection
 
@@ -69,5 +88,7 @@ class Organization(Core):
             collection = Collection(self, additional_data={"organization_id": self._id})
             collection.create(name)
         else:
-            raise Exception(f"No collection found with name {name}")
+            if collection == {}:
+                raise Exception(f"No collection found with name {name}")
+
         return collection

@@ -21,13 +21,22 @@ class Core:
         :param text:
         :return:
         """
-        return clean(text, punct=punctuation, stemming=False, lowercase=True)
+        if text == "":
+            return ""
+        return clean(text, punct=punctuation, stemming=False, extra_spaces=False).replace(" ", "_")
 
     def get_basic_dataset(self, name, dataset, data_type, data_name="", filter="id <> 0",
-                          additional_data = None,
-                          raise_exception=True):
+                          additional_data=None,
+                          raise_exception=True,
+                          id=0):
+        if id != 0:
+            dataset = {}
+
         if dataset == {}:
-            result = self.database.fetch(f"select * from {data_name} where {filter}")
+            if id != 0:
+                result = self.database.fetch(f"select * from {data_name} where id = ? and {filter}", [id])
+            else:
+                result = self.database.fetch(f"select * from {data_name} where {filter}")
 
             if result is not None:
                 dataset = {}
@@ -45,12 +54,12 @@ class Core:
                     if raise_exception:
                         raise Exception(f"No {data_name} with name {name}")
                     else:
-                        return  {}
+                        return {}
             else:
                 if raise_exception:
                     raise Exception(f"No {data_name} with name {name}")
                 else:
-                    return  {}
+                    return {}
 
     def _load(self, name, id, data_name):
         if id != 0:
@@ -87,7 +96,7 @@ class Core:
             self._id = id
             self.database.delete(data_name, {"id": self._id})
         else:
-            self.database.delete(data_name, {"name": name})
+            self.database.delete(data_name, {"name": self.system_name(name)})
 
         # @todo remove embedding so it can be recreated
         self.database.commit()
