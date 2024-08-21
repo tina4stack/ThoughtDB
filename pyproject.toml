@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "thoughtdb"
-version = "0.1.2"
+version = "0.1.4"
 description = "ThoughtDB is a mix between relational and vector database for efficient data retrieval"
 authors = ["Andre van Zuydam <andrevanzuydam@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.10,<4.0"
 tina4-python = "0.2.3"
 numpy = "^2.0.1"
 nltk="3.8.1"

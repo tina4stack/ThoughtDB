@@ -6,14 +6,13 @@ from src import vector_store
 @get("/test/{search}")
 async def api_test(request, response):
     data = vector_store.database.fetch(
-        "select id, table_name, key_name, key_value  from embedding where id in (select value from json_each(search('" +
+        "select id, table_name, key_name , key_value  from embedding where id in (select value from json_each(search('" +
         request.params["search"] + "', 5)))")
 
     result = []
     for record in data.records:
         sql = "select * from " + record["table_name"] + " where " + record["key_name"] + " = '" + record[
             "key_value"] + "'"
-        print(sql)
         result_data = vector_store.database.fetch_one(sql)
         result.append(result_data)
 

@@ -48,7 +48,7 @@ class VectorStore(Core):
         self.load_embeddings_to_memory(self.memory)
 
         if embedder is None:
-            embedder = load_model(model_path, verbose=False, embedding=True)
+            embedder = load_model(model_path, verbose=True, embedding=True)
 
         self.database.dba.create_function("embed", 5, self.create_embedding)
         self.database.dba.create_function("score", 5, self.vector_score)
@@ -104,7 +104,11 @@ class VectorStore(Core):
         :param key_value:
         :return:
         """
+        if data is None:
+            return []
+
         data = self.embedder.embed(data)
+
         self.database.insert("embedding", {"table_name": table_name, "column_name": column_name, "key_name": key_name,
                                            "key_value": key_value, "model_name": self.model_name, "data": data})
         self.database.commit()
@@ -141,6 +145,7 @@ class VectorStore(Core):
         :return:
         """
         results = self.memory.search(search, count)
+        print(results)
         ids = []
         for result in results:
             ids.append(result["id"])

@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7927b09e-82ac-4491-86c6-83d41857df73" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/thought_db_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/thought_db_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_memory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/VectorStore.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/VectorStore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/routes/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/routes/api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +32,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="aea171c5-1132-480f-a331-c7a0f68f313e" />
-  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/tina4_python/Router.py" root0="SKIP_INSPECTION" />
   </component>
@@ -37,7 +39,7 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="D:\php\php8.2.5\php.exe" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>

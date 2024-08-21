@@ -5,6 +5,11 @@ from src import vector_store
 
 @get("/test/{search}")
 async def api_test(request, response):
+    results = vector_store.database.fetch(
+        "select id, embed('document', 'data', 'id', d.id, d.data) as embed from document d", limit=100)
+
+    print(results)
+
     data = vector_store.database.fetch(
         "select id, table_name, key_name, key_value  from embedding where id in (select value from json_each(search('" +
         request.params["search"] + "', 5)))")

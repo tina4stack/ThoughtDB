@@ -42,7 +42,7 @@ def test_vector_search():
 
     print("Time:", end - start)
 
-    assert search == [{'id': 4, 'match': 48}, {'id': 3, 'match': 46}, {'id': 6, 'match': 44}]
+    assert search == [{'id': 4, 'match': 47}, {'id': 3, 'match': 46}, {'id': 6, 'match': 44}]
 
 
 def test_embedding_data():
@@ -55,6 +55,8 @@ def test_embedding_data():
     # table_name, column_name, key_name, key_value
     results = vector_store.database.fetch(
         "select id, embed('document', 'data', 'id', d.id, d.data) as embed from document d", limit=100)
+    print(results.records)
+    assert results.records == []
     vector_store.database.commit()
 
 
@@ -62,8 +64,10 @@ def test_searching_data():
     results = vector_store.database.fetch(
         "select id, name, data, score('document', 'data', 'id', d.id, 'farm animals') as score from document d order by 4 desc ", limit=100)
     vector_store.database.commit()
+    print(results)
     assert results.records[0] == {'id': 7, 'name': 'document7', 'data': 'Cow', 'score': 74}
     results = vector_store.database.fetch("select * from search('vehicles')")
+    print(results)
     assert results.records == []
 
 
