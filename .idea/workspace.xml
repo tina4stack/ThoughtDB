@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7927b09e-82ac-4491-86c6-83d41857df73" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/thought_db_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/thought_db_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/Collection.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Collection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/Conversation.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Conversation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughtdb/Document.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Document.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +29,9 @@
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="aea171c5-1132-480f-a331-c7a0f68f313e" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/tina4_python/Router.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -106,7 +107,7 @@
       <workItem from="1723725480551" duration="11100000" />
       <workItem from="1723906393958" duration="7596000" />
       <workItem from="1723918497949" duration="3931000" />
-      <workItem from="1724092891199" duration="12021000" />
+      <workItem from="1724092891199" duration="16063000" />
     </task>
     <task id="LOCAL-00001" summary="Added Organization functionality&#10;Added Indexes&#10;Added Tests for Organization">
       <option name="closed" value="true" />
@@ -212,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724104856671</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Updates to api - collections get, create">
+      <option name="closed" value="true" />
+      <created>1724105167410</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1724105167410</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

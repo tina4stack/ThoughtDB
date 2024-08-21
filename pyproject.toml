@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-tina4-python = "0.2.1"
+tina4-python = "0.2.3"
 numpy = "^2.0.1"
 nltk="3.8.1"
 sqlite-vec = "^0.1.1"
