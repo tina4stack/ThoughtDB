@@ -35,6 +35,7 @@ class Core:
 
         if dataset == {}:
             if id != 0:
+                print (f"select * from {data_name} where id = ? and {filter}")
                 result = self.database.fetch(f"select * from {data_name} where id = ? and {filter}", [id])
             else:
                 result = self.database.fetch(f"select * from {data_name} where {filter}")

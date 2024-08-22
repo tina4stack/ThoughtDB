@@ -72,7 +72,7 @@ class Organization(Core):
                                       id=id,
                                       raise_exception=raise_exception)
 
-    def get_collection(self, name, id=0, create=False):
+    def get_collection(self, name="", id=0, create=False):
         """
         Gets a collection by name or id
         :param name:

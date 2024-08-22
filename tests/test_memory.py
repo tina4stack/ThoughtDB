@@ -55,8 +55,8 @@ def test_embedding_data():
     # table_name, column_name, key_name, key_value
     results = vector_store.database.fetch(
         "select id, embed('document', 'data', 'id', d.id, d.data) as embed from document d", limit=100)
-    print(results.records)
-    assert results.records == []
+
+    assert results.records[1]["embed"][0] == "["
     vector_store.database.commit()
 
 

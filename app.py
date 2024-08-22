@@ -10,5 +10,5 @@ os.environ["TINA4_DEFAULT_WEBSERVER"] = "False"
 
 from tina4_python import *
 
-Debug("Running the service")
+Debug("Running the service", Constant.TINA4_LOG_INFO)
 run_web_server("0.0.0.0", 7180)

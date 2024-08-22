@@ -16,6 +16,7 @@ from thoughtdb.Core import Core
 from thoughtdb.Memory import Memory
 from thoughtdb.Organization import Organization
 from thought.model_loader import load_model
+from tina4_python import Debug, Constant
 
 
 class VectorStore(Core):
@@ -105,7 +106,7 @@ class VectorStore(Core):
         :return:
         """
         if data is None:
-            return []
+            return ""
 
         data = self.embedder.embed(data)
 
@@ -124,17 +125,21 @@ class VectorStore(Core):
         :param search
         :return:
         """
-        if self.last_embedding_search != search:
-            print("Embedding")
-            self.last_embedding = self.embedder.embed(search)
-            self.last_embedding_search = search
+        score = 0
+        try:
+            if self.last_embedding_search != search:
+                self.last_embedding = self.embedder.embed(search)
+                self.last_embedding_search = search
 
-        record = self.database.fetch_one(
-            "select data from embedding where table_name = ? and column_name = ? and key_name = ? and key_value = ?",
-            [table_name, column_name, key_name, key_value])
+            record = self.database.fetch_one(
+                "select data from embedding where table_name = ? and column_name = ? and key_name = ? and key_value = ?",
+                [table_name, column_name, key_name, key_value])
+            if record is None:
+                return 0
 
-        score = Memory.get_distance(self.last_embedding, record["data"])
-
+            score = Memory.get_distance(self.last_embedding, record["data"])
+        except Exception as e:
+            pass
         return score
 
     def search(self, search, count=5):
@@ -145,7 +150,6 @@ class VectorStore(Core):
         :return:
         """
         results = self.memory.search(search, count)
-        print(results)
         ids = []
         for result in results:
             ids.append(result["id"])
@@ -153,7 +157,7 @@ class VectorStore(Core):
         return json.dumps(ids)
 
     def load_embeddings_to_memory(self, memory):
-        print("Start loading embeddings")
+        Debug("Start loading embeddings", Constant.TINA4_LOG_DEBUG)
         count = 0
         data = self.database.fetch("select id, data from embedding order by id", limit=self.data_increments, skip=count)
         while len(data.records) > 0:
@@ -162,7 +166,7 @@ class VectorStore(Core):
             count += self.data_increments
             print("Fetching next ", self.data_increments)
             data = self.database.fetch("select * from embedding order by id", limit=self.data_increments, skip=count)
-        print("Done loading embeddings")
+        Debug("Done loading embeddings", Constant.TINA4_LOG_DEBUG)
 
     def run_embedding_thread(self, on_complete=None, keep_running=False):
         pass
