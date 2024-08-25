@@ -6,6 +6,7 @@
 import os
 import json
 import threading
+import hashlib
 
 import sqlite_vec
 from tina4_python.Database import Database
@@ -61,7 +62,7 @@ class VectorStore(Core):
         self._organizations = {}
         super(VectorStore, self).__init__(self)
 
-    def get_organizations(self, name="", id=0, raise_exception=True):
+    def get_organizations(self, name="", id=0, auth_key="", raise_exception=True):
         """
         Get organizations from the vector store
         :param id:
@@ -69,11 +70,15 @@ class VectorStore(Core):
         :param raise_exception:
         :return:
         """
+        filter = "id <> 0"
+        if auth_key != "":
+            filter = f"auth_key = '{auth_key}'"
+
         return self.get_basic_dataset(self.system_name(name), self._organizations, Organization,
-                                      "organization", id=id, filter="id <> 0",
+                                      "organization", id=id, filter=filter,
                                       raise_exception=raise_exception)
 
-    def get_organization(self, name="", id=0, create=False):
+    def get_organization(self, name="", id=0, auth_key="", create=False):
         """
         Gets a single organization from the vector store
         :param id:
@@ -81,10 +86,11 @@ class VectorStore(Core):
         :param create:
         :return:
         """
-        organization = self.get_organizations(name, id=id, raise_exception=False)
+        organization = self.get_organizations(name, id=id, auth_key=auth_key, raise_exception=False)
 
         if organization == {} and create:
-            organization = Organization(self)
+            print("Creating new organization")
+            organization = Organization(self, additional_data={"auth_key": hashlib.md5(name.encode()).hexdigest()})
             organization.create(name)
         else:
             if organization == {}:
@@ -170,5 +176,3 @@ class VectorStore(Core):
 
     def run_embedding_thread(self, on_complete=None, keep_running=False):
         pass
-
-

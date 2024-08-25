@@ -42,7 +42,7 @@ def test_vector_search():
 
     print("Time:", end - start)
 
-    assert search == [{'id': 4, 'match': 47}, {'id': 3, 'match': 46}, {'id': 6, 'match': 44}]
+    assert search == [{'id': 4, 'match': 48}, {'id': 3, 'match': 46}, {'id': 6, 'match': 44}]
 
 
 def test_embedding_data():

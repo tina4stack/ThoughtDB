@@ -5,14 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7927b09e-82ac-4491-86c6-83d41857df73" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/images/403.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/403.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/images/404.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/404.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/thought_db_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/thought_db_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_memory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thoughtdb/Core.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Core.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thoughtdb/Organization.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Organization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thoughtdb/VectorStore.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/VectorStore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/migrations/00001_initial_database_design.sql" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/migrations/00001_initial_database_design.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/routes/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/routes/api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +41,13 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/tina4_python/Router.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/tina4_python/Webserver.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="D:\php\php8.2.5\php.exe" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -48,33 +56,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/projects/php/backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.35747126",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/andrevanzuydam/IdeaProjects/simone2/ThoughtDB/src/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.35747126&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/public" />
       <recent name="D:\projects\python\simone2\ThoughtDB\thoughtdb" />
       <recent name="D:\projects\python\simone2\ThoughtDB\.venv\Scripts" />
       <recent name="D:\projects\python\simone2\ThoughtDB" />
       <recent name="$PROJECT_DIR$/thoughtdb" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\projects\python\simone2\ThoughtDB\thoughtdb" />
@@ -84,7 +92,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.387" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.419" />
       </set>
     </attachedChunks>
   </component>
@@ -111,6 +119,9 @@
       <workItem from="1723918497949" duration="3931000" />
       <workItem from="1724092891199" duration="16063000" />
       <workItem from="1724319190910" duration="5510000" />
+      <workItem from="1724480997510" duration="132000" />
+      <workItem from="1724481258335" duration="111000" />
+      <workItem from="1724482147437" duration="678000" />
     </task>
     <task id="LOCAL-00001" summary="Added Organization functionality&#10;Added Indexes&#10;Added Tests for Organization">
       <option name="closed" value="true" />

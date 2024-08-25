@@ -72,13 +72,15 @@ class Core:
             if self.data is not None:
                 self._id = self.data["id"]
 
-        print (self.data, self._id)
         return self.data
 
     def _create(self, name, data_name, additional_data=None):
         create_data = {"name": self.system_name(name)}
         if additional_data is not None:
             create_data.update(additional_data)
+
+        print("CREATE DATA", create_data)
+
         data = self.database.insert(data_name, create_data)
         self.database.commit()
         return data

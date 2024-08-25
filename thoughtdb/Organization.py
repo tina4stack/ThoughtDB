@@ -5,6 +5,7 @@
 #
 from thoughtdb.Collection import Collection
 from thoughtdb.Core import Core
+import hashlib
 
 
 class Organization(Core):
@@ -21,6 +22,7 @@ class Organization(Core):
         self._collections = {}
         self.additional_data = additional_data
         super(Organization, self).__init__(vector_store, id=id)
+
 
     def set_collections(self):
         """
@@ -43,6 +45,7 @@ class Organization(Core):
         return self
 
     def create(self, name):
+        self.additional_data={"auth_key": hashlib.md5(name.encode()).hexdigest()}
         data = self._create(name, "organization", self.additional_data)
 
         if data:
@@ -50,6 +53,7 @@ class Organization(Core):
         return self
 
     def update(self, name, id=0):
+        self.additional_data={"auth_key": hashlib.md5(name.encode()).hexdigest()}
         self._update(name, "organization", id, self.additional_data)
         self.data["name"] = self.system_name(name)
         return self

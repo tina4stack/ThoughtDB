@@ -8,7 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
-tina4-python = "0.2.3"
+tina4-python = "^0.2.3"
 numpy = "^2.0.1"
 nltk="3.8.1"
 sqlite-vec = "^0.1.1"
@@ -19,6 +19,7 @@ watchdog = "^4.0.2"
 [tool.poetry.group.dev.dependencies]
 flake8 = "^7.1.1"
 pytest = "^8.3.2"
+jurigged = "^0.5.8"
 
 [build-system]
 requires = ["poetry-core"]

@@ -2,6 +2,7 @@ create table organization
 (
     id           integer not null,
     name         varchar(255) default 'default' not null unique,
+    auth_key     varchar(255) default '' not null unique,
     date_created timestamp    default CURRENT_TIMESTAMP,
     primary key (id)
 );
