@@ -1,3 +1,5 @@
+from venv import create
+
 from tina4_python.Router import get, post, delete, patch
 from tina4_python.Swagger import description, tags, example, secure, params
 from src import vector_store
@@ -121,7 +123,7 @@ async def delete_api_organizations_id(request, response):
 
 
 @get("/api/organizations/{id}/collections")
-@description("Get all the collections for an organization")
+@description("Get all the collections from an organization")
 @tags("Organizations")
 @secure()
 async def get_api_organizations_id_collections(request, response):
@@ -142,7 +144,7 @@ async def get_api_organizations_id_collections(request, response):
 
 
 @post("/api/organizations/{id}/collections")
-@description("Add a collections for an organization")
+@description("Add a collection to an organization")
 @example({"name": "new_collection"})
 @tags("Organizations")
 @secure()
@@ -213,41 +215,98 @@ async def api_get_organizations_collections_id(request, response):
 @params(["auth_key"])
 @tags("Collections")
 @secure()
-async def api_get_collections(request, response):
+async def api_get_collection(request, response):
     if not "auth_key" in request.params or request.params["auth_key"] == "":
         return response({"error": "Auth key is missing"})
-    organisation = vector_store.get_organization(auth_key=request.params["auth_key"])
+    try:
+        organisation = vector_store.get_organization(auth_key=request.params["auth_key"])
 
-    print('{"hello": "world"}')
+        for key in organisation:
+            collections = []
+            collection_list = organisation[key].get_collections()
+            for collection_key in collection_list:
+                collections.append(collection_list[collection_key].data)
 
-
+            return response(collections)
+    except Exception as e:
+        return response({"error": str(e)})
 
 
 @post("/api/collections")
 @description("Add a collection")
 @params(["auth_key"])
+@example({"name": "new_collection"})
 @tags("Collections")
 @secure()
-async def api_get_organizations(request, response):
-    pass
+async def api_post_collection(request, response):
+    if not "auth_key" in request.params or request.params["auth_key"] == "":
+        return response({"error": "Auth key is missing"})
+    result = {}
+    try:
+        organisation = vector_store.get_organization(auth_key=request.params["auth_key"])
+
+        for key in organisation:
+            collection = organisation[key].get_collection(request.body["name"])
+
+            if collection.data == {}:
+                collection = organisation[key].get_collection(request.body["name"])
+
+            result = [{"id": collection.data["id"], "name": collection.data["name"],
+                       "organizationId": collection.data["organization_id"]}]
+    except Exception as e:
+        result = {"error": str(e)}
+
+    return response(result)
 
 
 @delete("/api/collections/{id}")
 @description("Delete a collection based on its id")
-@params(["key"])
+@params(["auth_key"])
 @tags("Collections")
 @secure()
-async def api_get_organizations(request, response):
-    pass
+async def api_delete_collection(request, response):
+    if not "auth_key" in request.params or request.params["auth_key"] == "":
+        return response({"error": "Auth key is missing"})
+    result = {}
+    try:
+        organisation = vector_store.get_organization(auth_key=request.params["auth_key"])
+
+        for key in organisation:
+            collection = organisation[key].get_collection(id=request.params["id"])
+
+            for collection_key in collection:
+                collection[collection_key].delete(collection[collection_key].data["name"])
+
+            result = {"error": None}
+    except Exception as e:
+        result = {"error": str(e)}
+
+    return response(result)
 
 
 @get("/api/documents")
-@description("Get all the collections")
-@params(["key", "collection_id"])
+@description("Get all the documents for a collection")
+@params(["auth_key", "collection_name"])
 @tags("Documents")
 @secure()
-async def api_get_collections(request, response):
-    pass
+async def api_get_documents(request, response):
+    if not "auth_key" in request.params or request.params["auth_key"] == "":
+        return response({"error": "Auth key is missing"})
+
+    result = {}
+    try:
+        organisation = vector_store.get_organization(auth_key=request.params["auth_key"])
+
+
+        for key in organisation:
+            collection = organisation[key].get_collection(name=request.params["collection_name"])
+            documents = collection.get_documents()
+            result = {"documents": documents}
+
+    except Exception as e:
+        result = {"error": str(e)}
+
+    return response(result)
 
 
 @get("/api/documents/{id}")
