@@ -7,6 +7,7 @@
     <list default="true" id="7927b09e-82ac-4491-86c6-83d41857df73" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/thought_db_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/thought_db_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thoughtdb/Document.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/Document.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thoughtdb/routes/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/thoughtdb/routes/api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +31,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/tina4_python/Router.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/tina4_python/Webserver.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$APPLICATION_PLUGINS_DIR$/python-ce/helpers/typeshed/stdlib/typing.pyi" root0="SKIP_INSPECTION" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -111,7 +113,8 @@
       <workItem from="1724481258335" duration="111000" />
       <workItem from="1724482147437" duration="678000" />
       <workItem from="1724681570340" duration="983000" />
-      <workItem from="1724859672502" duration="4880000" />
+      <workItem from="1724859672502" duration="8160000" />
+      <workItem from="1725196067975" duration="525000" />
     </task>
     <task id="LOCAL-00001" summary="Added Organization functionality&#10;Added Indexes&#10;Added Tests for Organization">
       <option name="closed" value="true" />
@@ -233,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724263965944</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Updates to api - collections get, create">
+      <option name="closed" value="true" />
+      <created>1724970493919</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1724970493919</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

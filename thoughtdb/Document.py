@@ -43,6 +43,9 @@ class Document(Core):
 
         if self.data is not None:
             self.data["data"] = data
+            self.data["metadata"] = metadata
+
+            
 
             # set metadata
             self.database.update("document", self.data)

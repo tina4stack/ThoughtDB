@@ -311,7 +311,7 @@ async def api_get_documents(request, response):
 
 @get("/api/documents/{id}")
 @description("Get a document based on its id")
-@params(["key"])
+@params(["auth_key", "collection_name"])
 @tags("Documents")
 @secure()
 async def api_get_organizations(request, response):
@@ -319,17 +319,37 @@ async def api_get_organizations(request, response):
 
 
 @post("/api/documents")
-@description("Add a collection")
-@params(["key", "collection_id"])
+@description("Adds a document")
+@params(["auth_key", "collection_name"])
+@example({"name": "My Document", "data": "Data in the document can be base64 for pdf", "url": "optional url to text or pdf", "documentType": "text/pdf/word/excel", "metadata": ["tag1", "tag2", "tag3"]})
 @tags("Documents")
 @secure()
-async def api_get_organizations(request, response):
-    pass
+async def api_post_document(request, response):
+    if not "auth_key" in request.params or request.params["auth_key"] == "":
+        return response({"error": "Auth key is missing"})
+
+    result = {}
+    try:
+        organisation = vector_store.get_organization(auth_key=request.params["auth_key"])
+
+        for key in organisation:
+            collection = organisation[key].get_collection(name=request.params["collection_name"])
+
+            document = collection.get_document(request.body["name"], create=True)
+            document.update(data=request.body["data"], metadata=request.body["metadata"])
+
+            print("DOCUMENT", document)
+            result = {"documents": [document.data]}
+
+    except Exception as e:
+        result = {"error": str(e)}
+
+    return response(result)
 
 
 @patch("/api/documents")
-@description("Add a collection")
-@params(["key", "collection_id"])
+@description("Updates a document")
+@params(["auth_key", "collection_name"])
 @tags("Documents")
 @secure()
 async def api_get_organizations(request, response):
@@ -338,7 +358,7 @@ async def api_get_organizations(request, response):
 
 @delete("/api/documents/{id}")
 @description("Delete a collection based on its id")
-@params(["key"])
+@params(["auth_key", "collection_name"])
 @tags("Documents")
 @secure()
 async def api_get_organizations(request, response):
