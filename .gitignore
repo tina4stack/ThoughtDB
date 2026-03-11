@@ -1,8 +1,15 @@
 /.venv/
 /database/
 /tests/test.db
+/tests/test2.db
 /dist/
 /models_db/
 /migrations/
 /sessions/
-/tests/test2.db
+__pycache__/
+*.pyc
+logs/
+uv.lock
+publish.sh
+*.index
+bench_zoo_*.db
